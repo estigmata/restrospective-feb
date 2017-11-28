@@ -1,0 +1,141 @@
+<div class="row" [dragDirective]="item" dropDirective appDragDrop [playerRole]="role" (dropEvent)="dropItem($event)" [style.borderBottomColor]="item.playerId.color" >
+  <div class="col-md-12 col-sm-12">
+    <div *ngIf="!!item && !item.editMode">
+      <div class="container-border list-group-item shadow" [style.borderBottomColor]="item.playerId.color">
+        <div *ngIf="configuration.isAddActive">
+          <p class="item-content">{{item.summary}}</p>
+          <div ngbDropdown class="inline-button" *ngIf="!item?.status; else editing">
+            <div>
+              <span ngbDropdownToggle><i class="fa fa-ellipsis-h"></i></span>
+              <div ngbDropdownMenu>
+                <button class="dropdown-item" (click)="enableEdition()">
+                  {{ 'ITEM.EDIT' | translate }}
+                </button>
+                <button class="dropdown-item" (click)="open(content)">
+                  {{ 'ITEM.DELETE' | translate }}
+                </button>
+              </div>
+            </div>
+          </div>
+          <ng-template #editing>
+            <span>
+              <h5>
+                <h4>...
+                  <span>&#160;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>   
+                </h4>   
+              </h5>
+            </span>
+          </ng-template>
+        </div>
+        <div *ngIf="configuration.isDropActive || configuration.isVoteActive" [style.borderBottomColor]="item.playerId.color">
+          <div class="parent" *ngIf="!item?.status; else editing">
+            <span class="h6">{{item.summary}}</span>
+            <span class="float-right">
+              <div ngbDropdown class="" *ngIf="(item.children.length > 0) && !configuration.isVoteActive">
+                <div *ngIf="role === 'Moderator'">
+                  <button class="btn inline-button" ngbDropdownToggle><i class="fa fa-ellipsis-h"></i></button>
+                  <div ngbDropdownMenu>
+                    <button class="dropdown-item" (click)="enableEdition()">
+                      {{ 'ITEM.EDIT' | translate }}
+                    </button>
+                    <button class="dropdown-item" (click)="ungroupAllItems(item)">
+                      {{ 'ITEM.UNGROUP_ITEMS' | translate }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <ng-template #editing>
+            <div ngbDropdown  class="parent">
+              <span class="h6">...
+                <h4 class="float-right">
+                  <span>&#160;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></span> 
+                </h4>
+              </span>
+            </div>
+          </ng-template>
+          <div *ngIf="item.children.length > 0">
+            <div *ngFor="let child of item.children" [dragDirective]="child" dropDirective (dragend)="dragend(child, item)"  appDragDrop [playerRole]="role">
+              <div class="card children" [style.borderBottomColor]="child.playerId.color">
+                {{child.summary}}
+                <hr *ngIf="child.categoryName" class="border-br">
+                <div *ngIf="child.categoryName" class="row">
+                  <div class="col-md-12 ">
+                    <span class="label-format" [style.background-color]="child.color">{{child.categoryName}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-muted footer-vote" *ngIf="configuration.isVoteActive">
+            <div class="votos"> 
+              <button class="btn btn-circle" (click)="voteItemDown()"><i class="fa fa-minus" aria-hidden="true"></i></button>
+              <span class="space-span">{{ item.currentVotes || 0 }}</span>
+              <button class="btn btn-circle" (click)="voteItemUp()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-group-item shadow" *ngIf="item.editMode">
+      <div *ngIf="item.summary !== 'Typing'; else typing">
+        <form [formGroup]='itemForm' (ngSubmit)="saveItem(itemForm.value)">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 align-input parent">
+              <textarea focus-item (keyup)="saveItemOnKeyEvent($event)" class="form-control input-summary" formControlName="summary" value="{{item?.summary}}"></textarea>
+            </div>
+            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+              <div *ngIf="itemForm.controls['summary'].invalid
+              && (itemForm.controls['summary'].dirty
+              || itemForm.controls['summary'.touched])" class="alert alert-danger" role="alert">
+                <div *ngIf="itemForm.controls['summary'].hasError('required')">
+                  {{ 'CATEGORY_ITEM.SUMMARY_REQUIRED' | translate }}
+                </div>
+              </div>
+              <div *ngIf="item.children.length > 0">
+                <div *ngFor="let child of item.children">
+                  <div class="card children" [style.borderBottomColor]="child.playerId.color">
+                    {{child.summary}}
+                    <hr *ngIf="child.categoryName" class="border-br">
+                    <div *ngIf="child.categoryName" class="row">
+                      <div class="col-md-12 ">
+                        <span class="label-format" [style.background-color]="child.color">{{child.categoryName}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12 align-btn">
+              <hr>
+              <button type="submit" class="btn btn-color" [disabled]="!itemForm.valid">
+                {{ 'CATEGORY_ITEM.SAVE' | translate }}
+              </button>
+              <button type="button" class="btn btn-cancel" (click)="cancelCreateEditItem()">
+                {{ 'CATEGORY_ITEM.CANCEL' | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <ng-template #typing>
+        <span>
+          <h5>
+            <h4>...
+              <span>&#160;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+            </h4>        
+          </h5>
+        </span>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<ng-template #content let-c="close">
+  <div class="modal-body" >
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')"></button>
+    <p>{{ 'CATEGORY_ITEM.DELETE_CONFIRMATION' | translate }}</p>
+    <button class="btn btn-color" (click)="c('accept')" focus-item>{{ 'CATEGORY_ITEM.ACCEPT' | translate }}</button>
+    <button class="btn btn-cancel" (click)="c('cancel')">{{ 'CATEGORY_ITEM.CANCEL' | translate }}</button>
+  </div>
+</ng-template>

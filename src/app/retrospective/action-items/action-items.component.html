@@ -1,0 +1,25 @@
+<div class="col-sm-12 col-md-12 col-lg-12 float-left step-container">
+  <div class="next-stage">
+    <button *ngIf="isModerator" type="button" class="btn btn-info" (click)="goToNextStage()">{{ 'ADDITEM.NEXT' | translate }}</button>
+  </div>
+  <div class="col-sm-1 col-md-1 col-lg-1 btn-carousel float-left">
+    <button class="btn btn-color" (click)="changePosition(-1)" [disabled]="back" role="button" data-slide="prev">
+      <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+    </button>
+    <span class="h6">{{ 'APP.BACK' | translate }}</span>
+  </div>
+  <div class="col-sm-10 col-md-10 col-lg-10 float-left" *ngIf="itemSelected">
+    <div class="col-sm-6 float-left">
+      <app-item-selector [item]="itemSelected" [category]="category"></app-item-selector>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6 float-left">
+      <app-create-action-item [item]="itemSelected" (actionItem)="setActionItem($event)" [playerRole]="player.role"></app-create-action-item>
+    </div>
+  </div>
+  <div class="col-sm-1 col-md-1 col-lg-1 float-left btn-carousel">
+    <button class="btn btn-color" [disabled]="next" (click)="changePosition(1)" role="button" data-slide="next">
+      <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+    </button>
+    <span class="h6">{{ 'APP.NEXT' | translate }}</span>
+  </div>
+</div>

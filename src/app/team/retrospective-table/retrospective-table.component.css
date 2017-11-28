@@ -1,0 +1,48 @@
+.background-table {
+  background-color: #f2f5f6;
+  color: #57595b;
+}
+
+.field-index {
+  width: 5%;
+  background-color: #f2f5f6;
+  border-top: 7px solid #f2f5f6;
+}
+
+.field-color {
+  background-color: white;
+  border-top: 7px solid #f2f5f6;
+}
+
+.round-left {
+  border-top-left-radius: 1.25rem!important;
+  border-bottom-left-radius: 1.25rem!important;
+  box-shadow: 8px 11px 18px 1px rgba(0,0,0,0,32);
+}
+
+.round-right {
+  border-top-right-radius: 1.25rem!important;
+  border-bottom-right-radius: 1.25rem!important;
+}
+
+.btn-align {
+  text-align: center;
+}
+
+.col-space {
+  margin: 2%;
+  max-width: 98%;
+}
+
+thead th {
+  color: black;
+}
+
+.state-icon-color {
+  color: #1BB2B2;
+}
+
+.btn-new {
+  background:  #1BB2B2;
+  color: white;
+}

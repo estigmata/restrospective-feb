@@ -1,0 +1,31 @@
+<nav>
+  <div class="row navbar-retro">
+    <div class="col-md-8">
+      <span class="h5">{{ retrospective.name }}</span>
+    </div>
+    <div class="col-md-4 text-align">
+      <p>{{ 'NAVBAR_RETROSPECTIVE.MEMBERS' | translate }}</p>
+      <div class="form-inline">
+        <div *ngIf="retrospective.state!=='Votes'">
+          <span *ngFor="let player of players;" class="fa fa-user-circle player-logo" title="{{ player.name }}" [style.color]="player.color"  aria-hidden="true"></span>
+        </div>
+        <div *ngIf="retrospective.state==='Votes'">
+          <span *ngFor="let player of players;" class="fa fa-user-circle player-logo" title="{{ player.name }}" [style.color]="player.color"  aria-hidden="true">
+            <p class="text-size" title="{{ player.votes }} {{ 'ITEM.VOTES' | translate }}">{{player.votes}}</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row navbar-retro">
+    <div class="col-md-12">
+      <ol class="breadcrumb-arrow">
+        <li><span [ngClass]="{'active': 'Items' == retrospective.state}">{{ 'RETROSPECTIVE.ADD_ITEM' | translate }}</span></li>
+        <li><span [ngClass]="{'active': 'Grouping' == retrospective.state}">{{ 'RETROSPECTIVE.GROUP_ITEM' | translate }}</span></li>
+        <li><span [ngClass]="{'active': 'Votes' == retrospective.state}">{{ 'RETROSPECTIVE.VOTE_ITEM' | translate }}</span></li>
+        <li><span [ngClass]="{'active': 'Actions' == retrospective.state}">{{ 'RETROSPECTIVE.ACTION_ITEM' | translate }}</span></li>
+        <li><span [ngClass]="{'active': 'Done' == retrospective.state}">{{ 'RETROSPECTIVE.DONE' | translate }}</span></li>
+      </ol>
+    </div>
+  </div>
+</nav>

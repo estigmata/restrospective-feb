@@ -1,0 +1,23 @@
+<div class="card-header item-title h6">
+  {{ 'RETROSPECTIVE.ITEM' | translate }}
+</div>
+<div class="card item-body">
+  <div class="card-body">
+    <h6 class="h6 parent">{{item.summary}}</h6>
+      <div *ngIf="item.children.length">
+        <div *ngFor="let child of item.children">
+          <div class="card children" [style.borderBottomColor]="child.playerId.color">
+            {{child.summary}}
+            <span *ngIf="child.categoryName" class="label-format" [style.background-color]="child.color">{{child.categoryName}}</span>
+          </div>
+        </div>
+      </div>
+    <span class="label-format" [style.background-color]="category.color">{{category.name}}</span>
+  </div>
+  <div class="card-footer text-muted">
+    <p id="less-margin ">
+      <span class="text text-primary">{{ 'ITEM.VOTES' | translate }}</span>
+      <span>{{ item.votes }}</span>
+    </p>
+  </div>
+</div>

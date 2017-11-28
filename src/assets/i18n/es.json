@@ -1,0 +1,79 @@
+{
+  "APP": {
+    "TITLE": "Bienvenido a",
+    "NEXT":"Siguiente",
+    "BACK": "Atras"
+  },
+  "CATEGORY": {
+    "ADD_ITEM": "Añadir"
+  },
+  "CATEGORY_ITEM": {
+    "SAVE": "Guardar",
+    "ACCEPT": "Aceptar",
+    "CANCEL": "Cancelar",
+    "SUMMARY_REQUIRED": "El resumen es requerido.",
+    "DELETE_CONFIRMATION": "¿Estas seguro que quieres eliminar este item?"
+  },
+  "NAVBAR": {
+    "LANGUAGE": "Idioma",
+    "ENGLISH": "INGLES",
+    "SPANISH": "ESPANOL",
+    "RETROSPECTIVE": "Retrospectiva"
+  },
+  "RETROSPECTIVE": {
+    "CATEGORY": "Categoria",
+    "CREATE": "Nueva Retrospectiva",
+    "NAME": "Nombre",
+    "DATE": "Fecha",
+    "STATE": "Estado",
+    "NAME_REQUIRED": "El nombre de la retrospectiva es requerida",
+    "SELECT_STRATEGY": "Seleccione una categoria",
+    "ITEM": "Elemento",
+    "ADD_ITEM": "Añadir elementos",
+    "GROUP_ITEM": "Agrupar elementos",
+    "VOTE_ITEM": "votar por elementos",
+    "DONE": "Reporte",
+    "ACTION_ITEM": "Elemento de accion"
+  },
+  "ITEM":{
+    "ITEM_ACTION_REQUIRED": "elemento de accion es requerido",
+    "VOTES": "Votos",
+    "EDIT": "Editar",
+    "DELETE": "Eliminar",
+    "UNGROUP_ITEMS": "Desagrupar"
+  },
+  "FORM": {
+    "SUBMIT":"Enviar",
+    "SAVE": "Guardar"
+  },
+  "ADDITEM": {
+    "NEXT": "Siguiente"
+  },
+  "VOTEITEM": {
+    "QUANTITY_VOTES": "Quantity of votes",
+    "REMAINING": "Votes remaining"
+  },
+  "AUTHMODAL": {
+    "NAME_REQUIRED": "Nombre es requerido",
+    "NAME": "Ingresando como usuario",
+    "DESCRIPTION": "usted puede entrar como usuario anonymous o poner un nombre para no ser anónimo",
+    "ACCEPT": "Aceptar",
+    "CANCEL": "Cancelar"  
+  },
+  "NAVBAR_RETROSPECTIVE": {
+    "MEMBERS": "Miembros"
+  },
+  "GROUPITEM": {
+    "UNNAMED": "Grupo sin nombre"
+  },
+  "USERS_CREATE_LOGIN": {
+    "NAME": "Nombre",
+    "PASSWORD": "contraseña",
+    "EMAIL": "Correo",
+    "NAME_REQUIRED": "Nombre es requerido",
+    "EMAIL_REQUIRED": "Correo es requerido",
+    "PASSWORD_REQUIRED": "Contraseña es requerido",
+    "SING_IN": "Iniciar sesión",
+    "SING_UP": "Registrarse"
+  }
+}

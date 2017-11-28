@@ -1,0 +1,27 @@
+.row-space{
+  padding: 5% 0%;
+}
+
+.button-step{
+  margin: 5px;
+  text-align: right;
+}
+
+.btn-color {
+  background-color: #21B0B0;  
+  color: #FFFFFF;
+  border-radius: 50%;
+}
+
+.btn-carousel {
+  margin-top: 5%;
+  color: #48505B;
+}
+
+@media only screen and (max-width: 576px) {
+  .btn-carousel {
+    top: 0%;
+    color: #48505B;
+    width: 100%;
+  }
+}

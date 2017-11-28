@@ -1,0 +1,35 @@
+<div class="container background-table">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-space">
+      <a class="btn btn-info float-left btn-new" routerLink="/teams/1/create-retrospective">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <span>{{ 'RETROSPECTIVE.CREATE' | translate }}</span>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>{{ 'RETROSPECTIVE.NAME' | translate }}</th>
+            <th>{{ 'RETROSPECTIVE.DATE' | translate }}</th>
+            <th>{{ 'RETROSPECTIVE.STATE' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let retrospective of retrospectives; let i = index;" class="field-color" (click)="(goToRetrospective(retrospective._id))"> 
+            <th class="field-index">{{ i+1 }}.</th>
+            <th class="round-left">{{ retrospective.name }}</th>
+            <th>{{ retrospective.createDate | date : format : timezone }}</th>
+            <th class="round-right">
+              <span class="fa fa-clock-o state-icon-color" aria-hidden="true"></span>
+              <span>{{ retrospective.state }}</span>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

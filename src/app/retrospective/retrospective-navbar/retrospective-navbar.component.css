@@ -1,0 +1,141 @@
+.navbar-retro {
+  margin: 0px;
+}
+nav {
+  background: #F2F5F6;
+  padding: 3% 2% 0px 2%; 
+}
+.nav-users {
+  position: absolute;
+  right: 0;
+}
+.span-user {
+  width: 10px;
+  height: 10px;
+}
+p {
+  margin-bottom: 0;
+}
+.span-right {
+  text-align: left;
+}
+.nav-right p {
+  color: #898C8F;
+  font-size: 12px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+span.player-logo {
+  margin-right: 2px;
+  font-size: 1.5em;
+}
+.text-size{
+  font-size: 16px;
+  color: black;
+}
+.breadcrumb-arrow {
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  list-style: none;
+}
+.breadcrumb-arrow li:first-child span {
+  border-radius: 4px 0 0 4px;
+}
+.breadcrumb-arrow li, .breadcrumb-arrow li span, .breadcrumb-arrow li span {
+  display: inline-block;
+  vertical-align: top
+}
+.breadcrumb-arrow li:not(:first-child) {
+  margin-left: -5px
+}
+.breadcrumb-arrow li span {
+  padding: 0 10px
+}
+.breadcrumb-arrow li span, .breadcrumb-arrow li:not(:first-child) span {
+  padding: 0 10px 0 25px;
+}
+.breadcrumb-arrow li span {
+  position: relative;
+  background-color: #D5D6D8;
+  border: 1px solid #D5D6D8
+}
+.breadcrumb-arrow li:first-child span {
+  padding-left: 10px
+}
+.breadcrumb-arrow li span:after, .breadcrumb-arrow li span:before {
+  position: absolute;
+  width: 0;
+  height: 0;
+  content: '';
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+.breadcrumb-arrow li:not(:last-child) span:before {
+  right: -10px;
+  z-index: 3;
+  border-left-color: #D5D6D8;
+  border-left-style: solid;
+  border-left-width: 11px;
+}
+.breadcrumb-arrow li:last-child span:before {
+  right: -12px;
+  z-index: 3;
+  border-left-color: #D5D6D8;
+  border-left-style: solid;
+  border-left-width: 11px;
+}
+.breadcrumb-arrow li:not(:last-child) span:after {
+  right: -11px;
+  z-index: 2;
+  border-left: 11px solid #F2F5F6;
+}
+.breadcrumb-arrow li .active {
+  background-color: #21B0B0;
+  border: 1px solid #21B0B0;
+}
+li span.active:before {
+  border-left-color: #21B0B0 !important;
+} 
+.breadcrumb-arrow li span {
+  color: #ffffff
+}
+.text-align{
+  text-align: center;
+}
+
+span.h5 {
+  font-size: 26px;
+}
+
+p {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 720px) and (min-width: 637px){
+  .breadcrumb-arrow li span, .breadcrumb-arrow li:not(:first-child) span {
+    padding: 0 10px 0 20px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 636px) and (min-width: 483px){
+  .breadcrumb-arrow li span, .breadcrumb-arrow li:not(:first-child) span {
+    padding: 0 8px 0 15px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 482px){
+  .breadcrumb-arrow li {
+    visibility: hidden;
+    width: 0px;
+  }
+  
+ .breadcrumb-arrow li .active {
+    visibility:visible;
+    font-size: 16px;
+    display: block;
+    width: 150px;
+  }
+}

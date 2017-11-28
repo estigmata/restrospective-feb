@@ -1,0 +1,14 @@
+<div class="col-sm-12 col-md-12 col-lg-12 float-left step-container">
+  <div class="next-stage">
+    <span class="h6 text text-primary">{{ 'VOTEITEM.REMAINING' | translate }} {{ totalVotes }}</span>
+    <button *ngIf="isModerator" type="button" class="btn btn-color" [disabled]="!isNextButtonActive" (click)="goToNextStage()">{{ 'ADDITEM.NEXT' | translate }}</button>
+  </div> 
+  <div class="col-lg-6 col-md-6 float-left" *ngFor="let category of categories">
+    <div class="card-header h6 category-title">{{ category.name }}</div>
+    <div class="card category-border" >
+      <div class="card-body">  
+        <app-category [configuration]="configuration" [category]="category" (voted)="updateVote($event)"></app-category>
+      </div> 
+    </div>
+  </div>
+</div>

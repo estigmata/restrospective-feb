@@ -1,0 +1,36 @@
+.card-space {
+  margin: 3% 5%;
+}
+
+.bottom-margin {
+  margin-bottom: 3%;
+}
+
+.btn-color{
+  background-color: #21B0B0;  
+  color: #FFFFFF;
+}
+
+.action-content {
+  background-color: #FFFFFF;
+  margin: 10px;
+  box-shadow: 0 2px 1px rgba(22,45,45,.3);
+  border-radius: 7px;
+  min-height: 170px;
+}
+
+.accion-item-title {
+  background-color: #F2F5F6;
+  border: 0;
+  padding-bottom: 0px;
+  color: #48505B;
+  font-weight: bold;
+}
+
+p {
+  padding: 25px;
+}
+
+.h6 {
+  font-size: 20px;
+}

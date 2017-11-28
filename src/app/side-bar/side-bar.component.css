@@ -1,0 +1,25 @@
+.background{
+  background-color: #373644;
+  min-height: 100vh;
+  height: 100%;
+}
+.text-format{
+  color:white;
+  margin-top: 30px; 
+  padding-left: 20px;
+}
+.align-content{
+  text-align: center;
+  padding: 0px;
+}
+.green-color{
+  color: #21B0B0;
+}
+
+.white-color {
+  color:white;
+  line-height: 50px;
+}
+.link-margin{
+  margin: 0px;
+}

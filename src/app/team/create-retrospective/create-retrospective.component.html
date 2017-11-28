@@ -1,0 +1,27 @@
+<div class="row margin-container">
+  <div class="col-sm-12">
+    <form [formGroup]="createRetrospectiveForm" (ngSubmit)="onSubmit(createRetrospectiveForm.value)">
+      <h4 class="text-primary">{{'RETROSPECTIVE.CREATE' | translate}}</h4>
+      <hr>
+      <div class="form-group">
+        <label> {{ 'RETROSPECTIVE.NAME' | translate }} </label>
+        <input class="form-control" type="text" formControlName="name">
+        <div [hidden]="!createRetrospectiveForm.controls.name.hasError('required') || createRetrospectiveForm.controls.name.pristine" class="alert alert-danger" role="alert">
+          {{ 'RETROSPECTIVE.NAME_REQUIRED' | translate }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{'RETROSPECTIVE.SELECT_STRATEGY' | translate }}</label>
+          <select class="form-control" [(ngModel)]="selectedStrategy" [ngModelOptions]="{standalone: true}" (ngModelChange)="onChange($event)">
+            <option *ngFor="let strategy of strategies" [ngValue]="strategy">
+                 {{strategy.name}}
+           </option>
+          </select>
+      </div>
+      <div class="btn-group" role="group">
+        <button class="btn btn-primary" type="submit" [disabled]="!createRetrospectiveForm.valid"> {{'FORM.SUBMIT' | translate }} </button>
+        <button class="btn" routerLink="/" > {{'AUTHMODAL.CANCEL' | translate }} </button>
+      </div>
+    </form>
+	</div>
+</div>

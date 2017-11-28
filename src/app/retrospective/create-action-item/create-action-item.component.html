@@ -1,0 +1,23 @@
+<div class="card-header h6 accion-item-title">
+  {{ 'RETROSPECTIVE.ACTION_ITEM' | translate }}
+</div>
+<div class="card action-content">
+  <div *ngIf="playerRole === 'Moderator'; else actionitem">
+    <form [formGroup]="actionItemForm" (ngSubmit)="saveActionItem(actionItemForm.value)">
+      <div class="card-block card-space">
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <textarea class="form-control" type="text" formControlName="actionItem" focus-item [typeItem]="typeItem" (keyup)="saveActionItemOnKeyEvent($event)"></textarea>
+            <div [hidden]="!actionItemForm.controls.actionItem.hasError('required') || actionItemForm.controls.actionItem.pristine" class="alert alert-danger" role="alert">
+              {{'ITEM.ITEM_ACTION_REQUIRED' | translate }}
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-color bottom-margin float-right">{{'FORM.SAVE' | translate }}</button>
+      </div>
+    </form>
+  </div>
+  <ng-template #actionitem>
+    <p>{{item.actionItem}}</p>
+  </ng-template>
+</div>

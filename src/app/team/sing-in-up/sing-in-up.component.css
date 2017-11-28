@@ -1,0 +1,10 @@
+.align {
+  align-items: center;
+  height: 80%;
+  margin: 0;
+}
+
+.align > div{
+  margin: auto;
+  padding: 10px;
+}

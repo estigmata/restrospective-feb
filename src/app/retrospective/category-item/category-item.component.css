@@ -1,0 +1,117 @@
+div.overflow, .overflow-vote {
+  margin-right: 37px;
+  text-align: justify;
+}
+
+.overflow-vote {
+  padding-right: 0px;
+  border-bottom: 5px;
+}
+
+.shadow {
+  box-shadow: 0 2px 1px rgba(22,45,45,.3);
+  border-radius: 7px;
+  margin: 5px;
+}
+
+.votos {
+  text-align: right;
+}
+
+.children {
+  border-radius: 7px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-right: 3%;
+  box-shadow: 1px 0px 10px 5px #DFDFDF;
+  margin-bottom: 3%;
+  border-bottom-width: 3px;
+}
+
+.parent {
+  margin-bottom: 18px;
+}
+
+.label-format{
+  background-color: #07a;
+  padding: 2px 8px;
+  float: right;
+  margin-right: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.border-br{
+  border: 1px solid #d9d9d9;
+  margin: 8px;
+}
+
+.container-border{
+  border-right-width: 10px;
+  border-left-width: 10px;
+  border-color:white;
+  border-bottom-width: 3px;
+}
+
+.inline-button{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #21B0B0;
+  background-color: #FFFFFF;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.btn-circle{
+  background-color: #FFFFFF;
+  color: #21B0B0;
+  border-radius: 50%;
+  padding: 5px 7px 4px 7px;
+}
+
+.space-span {
+  padding: 0px 3px;
+  color: #21B0B0;
+}
+
+.btn-color {
+  color: #FFFFFF;
+  background-color: #21B0B0;
+}
+
+.btn-cancel { 
+  color: #696963;
+  background-color: #FFFFFF;
+}
+
+.footer-vote {
+  background-color: #FFFFFF;
+}
+
+.item-content {
+  width: 90%;
+  font-size: 17px;
+}
+
+.edit {
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+}
+
+h4 span {
+    position:absolute;
+    right:0;
+    width:0;
+    background: #FFFFFF;
+    animation: typing 2s steps(10) infinite reverse;
+}
+
+@keyframes typing {
+    from { width: 90% }
+    to { width:95% }
+}
